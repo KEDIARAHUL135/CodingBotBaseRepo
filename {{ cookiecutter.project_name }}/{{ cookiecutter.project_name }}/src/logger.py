@@ -4,7 +4,7 @@ import logging
 import logging.config
 
 
-def setup_logger(config_file="configs/logging.yaml") -> None:
+def setup_logger(config_file="{{ cookiecutter.project_name }}/configs/logging.yaml") -> None:
     """
     Sets up the logger using the provided YAML configuration file.
 
