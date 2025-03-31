@@ -1,7 +1,5 @@
 user_objective: null
 
-repo_overview: null
-
 repository_information:
   - name: configs
     type: folder
