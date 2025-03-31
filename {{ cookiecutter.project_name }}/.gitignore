@@ -18,3 +18,6 @@ app.log
 
 # Poetry Lock file
 *.lock
+
+# Credentials YAML
+credentials.yaml
