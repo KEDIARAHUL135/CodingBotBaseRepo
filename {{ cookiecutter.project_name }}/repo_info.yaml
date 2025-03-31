@@ -1,34 +1,38 @@
 user_objective: null
 
 repository_information:
-  - name: configs
+  - name: '{{ cookiecutter.project_name }}'
     type: folder
-    description: Configuration files for logging and database settings
+    description: Base folder containing all the code files
     tree:
-      - name: credentials.yaml
-        type: file
-        description: Contains credentials provided by the user for all api, databases, etc. Use this to initialize connections to the apis and databases. 
+      - name: configs
+        type: folder
+        description: Configuration files for logging and database settings
+        tree:
+          - name: credentials.yaml
+            type: file
+            description: Contains credentials provided by the user for all api, databases, etc. Use this to initialize connections to the apis and databases. 
 
-  - name: src
-    type: folder
-    description: Contains the source code of the project
-    tree:
-      - name: __init__.py
-        type: file
-        description: This file makes the 'src' directory a Python package
-      - name: logger.py
-        type: file
-        description: Provides centralized logging configuration used across the repository
-        callables:
-          - type: function
-            name: get_logger
-            description: Initializes and returns a logger instance for the file. Always use this method to initialize logger instance for any file. 
-            parameters:
-              - name: name
-                type: str
-                description: Name of the file for which the logger should be initialized
-            returns:
-              - Configured logger instance.
+      - name: src
+        type: folder
+        description: Contains the source code of the project
+        tree:
+          - name: __init__.py
+            type: file
+            description: This file makes the 'src' directory a Python package
+          - name: logger.py
+            type: file
+            description: Provides centralized logging configuration used across the repository
+            callables:
+              - type: function
+                name: get_logger
+                description: Initializes and returns a logger instance for the file. Always use this method to initialize logger instance for any file. 
+                parameters:
+                  - name: name
+                    type: str
+                    description: Name of the file for which the logger should be initialized
+                returns:
+                  - Configured logger instance.
 
 recent_updates: Initialized base repository.
 
